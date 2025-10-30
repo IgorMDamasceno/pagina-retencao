@@ -292,15 +292,24 @@
         }
 
         .ad-area {
-          margin: 10px auto 0;
+          margin: 0 auto;
           border-radius: 18px;
-          padding: 12px 14px 14px;
+          padding: 0;
           background: transparent;
           border: none;
           display: grid;
           gap: 10px;
           position: relative;
           z-index: 1;
+        }
+
+        .ad-area[data-has-ad="true"] {
+          margin-top: 14px;
+          padding: 12px 14px 14px;
+        }
+
+        .ad-slot:empty {
+          display: none;
         }
 
         .ad-label {
@@ -628,9 +637,25 @@
     
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // Collapse ad spacing when no creative is loaded
+            const adArea = document.querySelector('.ad-area');
+            const adSlot = adArea ? adArea.querySelector('.ad-slot') : null;
+
+            if (adArea && adSlot) {
+                const toggleAdState = () => {
+                    const hasContent = adSlot.children.length > 0 || adSlot.textContent.trim() !== '';
+                    adArea.dataset.hasAd = hasContent ? 'true' : 'false';
+                };
+
+                toggleAdState();
+
+                const observer = new MutationObserver(toggleAdState);
+                observer.observe(adSlot, { childList: true, subtree: true, characterData: true });
+            }
+
             // FAQ Interactivity
             const faqItems = document.querySelectorAll('.faq ul li');
-            
+
             faqItems.forEach(function(item) {
                 const checkbox = item.querySelector('input[type="checkbox"]');
                 const title = item.querySelector('h2');
