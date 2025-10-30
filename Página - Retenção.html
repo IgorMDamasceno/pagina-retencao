@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Convertida - HTML</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://lazy.spun.com.br/buttons/css/main.css">
+    <link rel="stylesheet" href="https://lazy.spun.com.br/buttons/css/slick-theme.css">
+    <link rel="stylesheet" href="https://lazy.spun.com.br/buttons/css/slick.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600&family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    
+    <style>
+        :root {
+            --default-color: #344154;
+            --hero-dark: #0c1320;
+            --hero-light: #4f6ea6;
+        }
+        
+        h1.entry-title {
+            display: none;
+        }
+
+        h3.fw-bold {
+            margin-top: -38px;
+            font-size: 26px;
+            margin-bottom: 0px;
+        }
+
+        h6.fw-normal {
+            margin-bottom: -6px !important;
+            font-size: 16px !important;
+            margin-top: 15px;
+        }
+
+        p.small {
+            display: none;
+        }
+
+        div.card-body {
+            padding: 6px !important;
+        }
+
+        .asdasdas {
+            margin-top: -38px !important;
+        }
+
+        h2 {
+            font-size: 20px !important;
+        }
+
+        .card-body.faq {
+            margin-top: -50px !important;
+        }
+        
+        .color-cyan {
+            color: var(--default-color);
+        }
+        
+        .container_lazy .asdasdas h2:before {
+            background: var(--default-color);
+        }
+        
+        
+        .container_lazy .color-cyan {
+            color: var(--default-color);
+        }
+
+          /* Estilo do botão SUPER CHAMATIVO */
+        .super-botao {
+          position: relative;
+          display: grid;
+          grid-template-columns: 1fr auto;
+          align-items: center;
+        
+          text-align: center;
+          gap: 1.8rem;
+          overflow: hidden;
+          width: 100%;
+          min-width: 280px;
+          margin: 10px auto !important;
+        
+          /* Visual */
+          background: linear-gradient(135deg,
+            #1b2431 0%,
+            #344154 25%,
+            #586a84 50%,
+            #344154 75%,
+            #121821 100%
+          );
+          background-size: 200% 200%;
+          color: #fff !important;
+          padding: 14px 16px !important;
+          border-radius: 16px;
+          border: 2px solid rgba(255, 255, 255, .2);
+          font-weight: 900;
+          letter-spacing: .5px;
+          text-transform: uppercase;
+          text-decoration: none !important;
+        
+          /* Profundidade mais discreta */
+          box-shadow:
+            0 6px 18px rgba(0, 0, 0, .28),
+            0 0 16px rgba(61, 140, 255, .18),
+            inset 0 1px 0 rgba(255, 255, 255, .18),
+            inset 0 -1px 0 rgba(0, 0, 0, .08);
+        
+          /* Pulsar leve + gradiente */
+          animation:
+            softPulse 2.8s ease-in-out infinite,
+            gradientShift 7s ease-in-out infinite;
+        
+          transition: transform .25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow .25s ease, filter .25s ease;
+          transform-origin: center;
+          will-change: transform, box-shadow, background-position;
+        }
+        
+        /* Animação do gradiente de fundo (mais lenta) */
+        @keyframes gradientShift {
+          0%, 100% { background-position: 0% 50%; }
+          50%      { background-position: 100% 50%; }
+        }
+        
+        /* Novo: pulso suave (escala mínima + glow sutil) */
+        @keyframes softPulse {
+          0%, 100% {
+            transform: scale(1);
+            box-shadow:
+              0 6px 18px rgba(0, 0, 0, .28),
+              0 0 16px rgba(61, 140, 255, .18),
+              inset 0 1px 0 rgba(255, 255, 255, .18),
+              inset 0 -1px 0 rgba(0, 0, 0, .08);
+            filter: brightness(1);
+          }
+          50% {
+            transform: scale(1.025); /* ~1.5% */
+            box-shadow:
+              0 10px 22px rgba(0, 0, 0, .32),
+              0 0 22px rgba(61, 140, 255, .26),
+              inset 0 1px 0 rgba(255, 255, 255, .2),
+              inset 0 -1px 0 rgba(0, 0, 0, .1);
+            filter: brightness(1.02);
+          }
+        }
+        
+        /* Brilho que "varre" no hover */
+        .super-botao::after {
+          content: "";
+          position: absolute;
+          inset: 0;
+          border-radius: inherit;
+          background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .22), rgba(255, 255, 255, .35), rgba(255, 255, 255, .22), transparent);
+          transform: translateX(-120%);
+          transition: transform .7s ease;
+          pointer-events: none;
+          mix-blend-mode: screen;
+          z-index: 2;
+        }
+        .super-botao:hover::after { transform: translateX(120%); }
+        
+        /* Ícone */
+        .super-botao .super-botao-icon {
+          position: absolute;
+          right: 18px;
+        
+          display: grid;
+          place-items: center;
+          border-radius: 999px;
+          background: rgba(255, 255, 255, .2);
+          box-shadow:
+            inset 0 2px 0 rgba(255, 255, 255, .3),
+            0 0 12px rgba(255, 255, 255, .18);
+          transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
+          margin-right: 0;
+        
+          /* Pulso do ícone também suavizado */
+          animation: iconPulse 2.6s ease-in-out infinite;
+        }
+        @keyframes iconPulse {
+          0%, 100% { transform: scale(1); }
+          50%      { transform: scale(1.06); }
+        }
+        
+        .super-botao:hover .super-botao-icon {
+          background: rgba(255, 255, 255, .32);
+          box-shadow:
+            inset 0 2px 0 rgba(255, 255, 255, .4),
+            0 0 16px rgba(255, 255, 255, .28);
+        }
+        
+        /* Texto */
+        .super-botao .super-botao-text {
+          font-family: 'Inter', sans-serif;
+          font-weight: 900;
+          line-height: 1;
+          position: relative;
+          text-shadow: 0 2px 4px rgba(0, 0, 0, .3);
+          transition: text-shadow .25s ease;
+          font-size: 14px;
+        }
+        .super-botao:hover .super-botao-text {
+          text-shadow:
+            0 2px 8px rgba(0, 0, 0, .4),
+            0 0 12px rgba(255, 255, 255, .24);
+        }
+        
+        /* Efeito de ondas no hover (mantido, levemente menor) */
+        .super-botao:hover {
+          animation:
+            softPulse 2.8s ease-in-out infinite,
+            gradientShift 7s ease-in-out infinite,
+            ripple 0.5s linear;
+        }
+        @keyframes ripple {
+          from { box-shadow: 0 0 0 0px rgba(255, 255, 255, 0.35); }
+          to   { box-shadow: 0 0 0 18px rgba(255, 255, 255, 0); }
+        }
+        
+        /* Acessibilidade: reduz animações para quem prefere movimento reduzido */
+        @media (prefers-reduced-motion: reduce) {
+          .super-botao,
+          .super-botao .super-botao-icon {
+            animation: none !important;
+            transition: none !important;
+          }
+        }
+        
+        /* Responsividade */
+        @media (max-width: 768px) {
+          .super-botao {
+            padding: 14px 24px;
+            font-size: 0.5em !important;
+          }
+        }
+
+        .hero-mobile {
+          position: relative;
+          background: linear-gradient(160deg, var(--hero-light) 0%, var(--hero-dark) 100%);
+          border-radius: 24px;
+          padding: 28px 20px 32px;
+          color: #ffffff;
+          box-shadow: 0 12px 40px rgba(12, 19, 32, 0.28);
+          overflow: hidden;
+        }
+
+        .hero-mobile::after {
+          content: "";
+          position: absolute;
+          inset: 0;
+          background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.18), transparent 55%);
+          pointer-events: none;
+        }
+
+        .hero-tag {
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+          font-size: 12px;
+          text-transform: uppercase;
+          letter-spacing: 0.1em;
+          background: rgba(10, 18, 32, 0.45);
+          border: 1px solid rgba(255, 255, 255, 0.18);
+          border-radius: 999px;
+          padding: 6px 14px;
+          margin-bottom: 14px;
+          position: relative;
+          z-index: 1;
+        }
+
+        .hero-mobile h3 {
+          font-size: 26px;
+          margin: 0 0 12px;
+          line-height: 1.2;
+          position: relative;
+          z-index: 1;
+          color: #ffffff;
+        }
+
+        .hero-mobile h6 {
+          font-size: 16px !important;
+          margin: 16px 0 0;
+          color: rgba(255, 255, 255, 0.82);
+          position: relative;
+          z-index: 1;
+        }
+
+        .ad-area {
+          margin: 10px auto 0;
+          border-radius: 18px;
+          padding: 12px 14px 14px;
+          background: rgba(8, 14, 24, 0.42);
+          border: 1px solid rgba(255, 255, 255, 0.12);
+          display: grid;
+          gap: 10px;
+          position: relative;
+          z-index: 1;
+        }
+
+        .ad-label {
+          font-size: 11px;
+          text-transform: uppercase;
+          letter-spacing: 0.08em;
+          font-weight: 600;
+          color: rgba(255, 255, 255, 0.62);
+        }
+
+        .ad-warning-text {
+          font-size: 14px;
+          font-weight: 600;
+          background: rgba(111, 185, 255, 0.18);
+          border-radius: 12px;
+          padding: 10px 12px;
+          color: #f5fbff;
+          border: 1px solid rgba(111, 185, 255, 0.32);
+        }
+
+        .hero-benefits {
+          list-style: none;
+          margin: 18px 0 16px;
+          padding: 0;
+          display: grid;
+          gap: 8px;
+          position: relative;
+          z-index: 1;
+        }
+
+        .hero-benefits li {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          padding: 10px 12px;
+          border-radius: 12px;
+          background: rgba(255, 255, 255, 0.14);
+          color: #ffffff;
+          font-size: 14px;
+          line-height: 1.4;
+        }
+
+        .hero-benefits li span {
+          display: inline-flex;
+          width: 24px;
+          height: 24px;
+          border-radius: 50%;
+          align-items: center;
+          justify-content: center;
+          background: rgba(255, 255, 255, 0.16);
+          font-size: 18px;
+        }
+
+        .cta-pointer {
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 0.05em;
+          font-size: 13px;
+          margin: 12px 0 4px;
+          color: rgba(255, 255, 255, 0.86);
+          position: relative;
+          z-index: 1;
+        }
+
+        .hero-buttons {
+          display: grid;
+          gap: 12px;
+          margin-top: 10px;
+          position: relative;
+          z-index: 1;
+        }
+
+        .hero-buttons .super-botao {
+          margin: 0 !important;
+        }
+
+        @media (min-width: 768px) {
+          .hero-mobile {
+            padding: 36px 48px 40px;
+          }
+
+          .hero-benefits {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+          }
+
+          .hero-buttons {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+          }
+        }
+    </style>
+</head>
+<body>
+    <div class="container_lazy">
+        <div class="container-full my-5">          
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-8 col-lg-10 col-12 mx-auto">
+                        <section class="hero-mobile text-center">
+                            <h3 class="fw-bold text-white">
+                                Your new card
+                            </h3>
+                            <div class="ad-area">
+                                <div id="netdinheiro_top" class="ad-slot"></div>
+                            </div>
+                            <p class="cta-pointer">Choose the limit card you want</p>
+                            <div class="hero-buttons">
+                                <a href="https://us.netdinheiro.com.br/new-u-s-bank-cash-rewards-visa-card-p2/" class="super-botao">
+                                    <span class="super-botao-text">CARD WITH $1,000 LIMIT</span>
+                                    <span class="super-botao-icon">
+                                        <span class="material-symbols-outlined">arrow_circle_right</span>
+                                    </span>
+                                </a>
+                                <a href="https://us.netdinheiro.com.br/new-wells-fargo-active-cash-card-p2/" class="super-botao">
+                                    <span class="super-botao-text">CARD WITH $2,000 LIMIT</span>
+                                    <span class="super-botao-icon">
+                                        <span class="material-symbols-outlined">arrow_circle_right</span>
+                                    </span>
+                                </a>
+                                <a href="https://us.netdinheiro.com.br/new-chime-visa-debit-card-p2/" class="super-botao">
+                                    <span class="super-botao-text">CARD WITH $3,000 LIMIT</span>
+                                    <span class="super-botao-icon">
+                                        <span class="material-symbols-outlined">arrow_circle_right</span>
+                                    </span>
+                                </a>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+
+<div class="row mt-5" id="secao1">
+    <div class="col-xl-8 col-lg-10 col-12 mx-auto asdasdas" align="justify">
+        <h2>Meet the card</h2>
+        <p class="roboto mt-3">
+            Enjoy <strong>0% introductory APR for 21 months</strong> on purchases and balance transfers—an extended window to manage expenses without interest charges. This offer can help you <strong>consolidate debt</strong>, smooth out big purchases, and build healthier money habits while keeping costs predictable.
+        </p>
+        <p class="roboto mt-3">
+            Highlights at a glance:
+        </p>
+        <ul class="roboto" style="margin-left:1rem">
+            <li><strong>No annual fee</strong> to keep long-term costs low.</li>
+            <li><strong>Intro 0% APR for 21 months</strong> on eligible purchases and balance transfers (regular APR applies after the intro period; a balance transfer fee may apply).</li>
+            <li><strong>Cell phone protection</strong> on eligible plans—added peace of mind against accidental damage (terms and exclusions apply).</li>
+            <li><strong>Account security</strong> with alerts, $0 fraud liability on unauthorized charges, and digital wallet compatibility.</li>
+            <li><strong>Credit-building tools</strong> like automatic payment scheduling and usage reminders to help you stay on track.</li>
+        </ul>
+        <p class="roboto mt-3">
+            Who it’s good for:
+        </p>
+        <ul class="roboto" style="margin-left:1rem">
+            <li>Anyone planning a <strong>large purchase</strong> who wants time to pay it down interest-free.</li>
+            <li>People looking to <strong>move balances</strong> to a single card to simplify payments.</li>
+            <li>Budgeters who prefer <strong>predictable monthly costs</strong> with no annual fee.</li>
+        </ul>
+        <p class="roboto mt-3">
+            Tips to maximize the intro period:
+        </p>
+        <ul class="roboto" style="margin-left:1rem">
+            <li>Set up <strong>auto-pay</strong> for at least the statement minimum to avoid late fees.</li>
+            <li>Aim to <strong>pay off the balance</strong> before the intro APR ends to avoid interest.</li>
+            <li>Check the <strong>balance transfer fee</strong> and timing—transfers often must post within a set window.</li>
+        </ul>
+        <p class="roboto mt-3">
+            Want the quick details? <a href="#faq">Jump to the FAQs</a> for eligibility, fees, and how the 0% APR works.
+        </p>
+        <div class="col-12 col-md-6 mx-auto">
+            <a href="https://us.netdinheiro.com.br/new-capital-one-venture-rewards-credit-card-p2/" class="super-botao" aria-label="See another option">
+                <span class="super-botao-text">SEE ANOTHER OPTION</span>
+                <span class="super-botao-icon">
+                    <span class="material-symbols-outlined">arrow_circle_right</span>
+                </span>
+            </a>
+        </div>
+
+    </div>
+</div>
+
+<div class="row mt-5" id="faq">
+    <div class="col-lg-8 col-md-9 col-12 mx-auto">
+        <div class="card-body faq">
+            <ul>
+                <li>
+                    <input type="checkbox" checked>
+                    <i></i>
+                    <h2>How long does the introductory 0% APR last?</h2>
+                    <p>For <strong>21 full months</strong> from account opening (or from the date of the qualifying transfer, if applicable). After that, a variable APR applies based on your credit profile and market rates.</p>
+                </li>
+                <li>
+                    <input type="checkbox">
+                    <i></i>
+                    <h2>Is there a yearly fee?</h2>
+                    <p><strong>No annual fee.</strong> That helps you keep more of your savings from the 0% APR period.</p>
+                </li>
+                <li>
+                    <input type="checkbox">
+                    <i></i>
+                    <h2>What does phone protection cover?</h2>
+                    <p>Eligible phones on a qualifying plan may be covered for <strong>accidental damage</strong> (e.g., cracks, spills). Coverage limits, deductibles, and exclusions apply—check the benefit guide for details.</p>
+                </li>
+                <li>
+                    <input type="checkbox">
+                    <i></i>
+                    <h2>What’s the application process like?</h2>
+                    <p>It’s streamlined and digital. You’ll provide basic personal and financial information, agree to a credit check, and receive a decision—often in minutes.</p>
+                </li>
+                <li>
+                    <input type="checkbox">
+                    <i></i>
+                    <h2>How do I access customized offers?</h2>
+                    <p>Once approved, you may receive <strong>personalized offers</strong> based on your spending patterns—helping you optimize rewards and savings on categories you use most.</p>
+                </li>
+                <li>
+                    <input type="checkbox">
+                    <i></i>
+                    <h2>Is there a balance transfer fee?</h2>
+                    <p>Many 0% APR balance transfer offers include a fee (commonly a percentage of the amount transferred). Factor this into your payoff plan to confirm the net savings.</p>
+                </li>
+                <li>
+                    <input type="checkbox">
+                    <i></i>
+                    <h2>What credit profile is typically required?</h2>
+                    <p>Issuers generally look for a <strong>good to excellent credit profile</strong>, stable income, and responsible credit use. Final decisions depend on the issuer’s underwriting.</p>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Structured data for SEO (FAQPage) -->
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "How long does the introductory 0% APR last?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The introductory 0% APR lasts for 21 months. After the intro period, a variable APR applies based on your credit profile and market rates."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is there a yearly fee?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. There is no annual fee, helping you maximize savings from the 0% APR period."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What does phone protection cover?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Phone protection may cover accidental damage for eligible devices on qualifying plans. Coverage limits, deductibles, and exclusions apply; check the benefit guide."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What’s the application process like?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The application is online and streamlined. Provide personal and financial details, consent to a credit check, and you may receive a decision within minutes."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How do I access customized offers?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "After approval, you may receive personalized offers matched to your spending patterns to help optimize rewards and savings."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is there a balance transfer fee?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Many intro 0% APR offers include a balance transfer fee, usually a percentage of the amount moved. Consider this cost when calculating your payoff plan."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What credit profile is typically required?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Issuers often look for a good to excellent credit profile and stable income. Final approval is subject to the issuer’s underwriting."
+              }
+            }
+          ]
+        }
+        </script>
+    </div>
+</div>
+
+<div class="row mt-5" id="secao2">
+    <div class="col-xl-8 col-lg-10 col-12 mx-auto asdasdas" align="justify">
+        <h2>Take the first step toward financial independence—apply and feel the change</h2>
+        <p class="roboto mt-3">
+            Move forward with a plan: use the <strong>0% intro APR</strong> period to eliminate high-interest balances, split a big purchase into manageable payments, and keep your budget on track. When the promo window ends, you’ll be positioned with lower debt and a stronger credit profile.
+        </p>
+        <p class="roboto mt-3">
+            How to apply in three steps:
+        </p>
+        <ol class="roboto" style="margin-left:1rem">
+            <li><strong>Check eligibility:</strong> review issuer terms, rates, and any balance transfer windows.</li>
+            <li><strong>Apply online:</strong> submit your details; most applicants receive a fast decision.</li>
+            <li><strong>Set up auto-pay:</strong> schedule payments to stay current and maximize savings.</li>
+        </ol>
+        <div class="col-12 col-md-6 mx-auto">
+            <a href="https://us.netdinheiro.com.br/new-chase-sapphire-preferred-credit-card-p2/" class="super-botao" aria-label="See card details">
+                <span class="super-botao-text">SEE CARD DETAILS</span>
+                <span class="super-botao-icon">
+                    <span class="material-symbols-outlined">arrow_circle_right</span>
+                </span>
+            </a>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+</div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // FAQ Interactivity
+            const faqItems = document.querySelectorAll('.faq ul li');
+            
+            faqItems.forEach(function(item) {
+                const checkbox = item.querySelector('input[type="checkbox"]');
+                const title = item.querySelector('h2');
+                const icon = item.querySelector('i');
+                
+                [title, icon].forEach(function(element) {
+                    if (element) {
+                        element.addEventListener('click', function() {
+                            checkbox.checked = !checkbox.checked;
+                        });
+                    }
+                });
+            });
+            
+            // Smooth scroll for anchor links
+            const anchorLinks = document.querySelectorAll('a[href^="#"]');
+            anchorLinks.forEach(function(link) {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+          //INÍCIO DO CÓDIGO DE LÓGICA DA URL 
+          
+  function getParam(key) {
+    const p = new URLSearchParams(window.location.search);
+    const v = p.get(key);
+    return v ? v.trim() : null;
+  }
+
+  // Title Case com suporte a acentos, hífen e apóstrofo
+  function toTitleCaseSmart(str) {
+    return str
+      .replace(/\s+/g, ' ')
+      .trim()
+      .split(' ')
+      .filter(Boolean)
+      .map(word => word
+        .split('-')
+        .map(part => part
+          .split("'")
+          .map(seg => seg ? seg.charAt(0).toUpperCase() + seg.slice(1).toLowerCase() : seg)
+          .join("'")
+        )
+        .join('-')
+      )
+      .join(' ');
+  }
+
+  // Higieniza nome (Unicode letras, números, espaço, ponto, hífen, apóstrofo)
+  function sanitizeName(raw, maxLen = 60) {
+    if (!raw) return null;
+    const cleaned = raw
+      .replace(/[^\p{L}0-9 .'\-]/gu, '')
+      .replace(/\s+/g, ' ')
+      .trim()
+      .slice(0, maxLen);
+    if (!cleaned) return null;
+    return toTitleCaseSmart(cleaned);
+  }
+
+  // Extrai brand a partir de refer (URL/domínio/nome)
+  function getReferBrand() {
+    let raw = getParam('refer');
+    if (!raw) return null;
+    raw = raw.trim();
+
+    let hostOrName = raw;
+    if (/^https?:\/\//i.test(raw)) {
+      try { hostOrName = new URL(raw).hostname; }
+      catch { hostOrName = raw.replace(/^(https?:\/\/)/i, ''); }
+    }
+
+    hostOrName = hostOrName.replace(/^www\./i, '').trim();
+
+    let core = hostOrName;
+    if (/^[a-z0-9.-]+$/i.test(hostOrName) && hostOrName.includes('.')) {
+      const labels = hostOrName.toLowerCase().split('.').filter(Boolean);
+      const tld2 = new Set(['com.br','net.br','org.br','gov.br','edu.br']);
+      const tld1 = new Set(['com','net','org','br','io','co','us','uk','de','es','pt']);
+      if (labels.length >= 2) {
+        const last = labels[labels.length - 1];
+        const last2 = labels[labels.length - 2] + '.' + last;
+        if (tld2.has(last2)) { labels.pop(); labels.pop(); }
+        else if (tld1.has(last)) { labels.pop(); }
+        core = labels.length ? labels[labels.length - 1] : hostOrName;
+      }
+    }
+
+    core = core.replace(/[^\p{L}0-9 .'\-]/gu, ' ').replace(/\s+/g, ' ').trim();
+    return core ? toTitleCaseSmart(core) : null;
+  }
+
+  // Possessivo com apóstrofo tipográfico
+  function brandPossessive(brand) {
+    if (!brand) return null;
+    return /s$/i.test(brand) ? (brand + '’') : (brand + '’s');
+  }
+
+  (function renderSubtitle() {
+    const target = document.querySelector('h6.fw-normal.text-center');
+    if (!target) return;
+
+    const brand = getReferBrand();          // {{refer}}
+    const rawName = getParam('name');       // {{name}}
+    const safeName = sanitizeName(rawName);
+
+    const hasName = !!safeName;
+    const hasBrand = !!brand;
+
+    // Limpa conteúdo
+    target.textContent = '';
+
+    // Prefixo com/sem nome
+    if (hasName) {
+      const nameEl = document.createElement('b'); // negrito no nome quando existe
+      nameEl.textContent = safeName;
+      target.appendChild(nameEl);
+      target.append(', here are ');
+    } else {
+      target.append('Here are ');
+    }
+
+    // Brand (possessivo). Negrito apenas quando:
+    // - Só existe brand (sem nome)
+    // - Se há nome e brand, brand fica normal (sem negrito)
+    if (hasBrand) {
+      const possessive = brandPossessive(brand);
+      if (!hasName) {
+        const bBrand = document.createElement('b'); // negrito só quando não há name
+        bBrand.textContent = possessive;
+        target.appendChild(bBrand);
+        target.append(' ');
+      } else {
+        target.append(possessive + ' ');
+      }
+    }
+
+    target.append('card picks for you:');
+  })();
+
+//FIM DO CÓDIGO DE LÓGICA DA URL --- -->
+
+           
+        });
+    </script>
+</body>
+</html>
